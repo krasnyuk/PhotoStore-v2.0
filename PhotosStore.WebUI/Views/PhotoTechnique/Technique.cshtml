@@ -1,0 +1,11 @@
+﻿@model PhotosStore.Domain.Entities.PhotoTechnique
+
+@{
+    ViewBag.Title = "Просмотр товара";
+    Layout = "~/Views/Shared/_TechniqueDetailsLayout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+<h3>Категория: @Model.Category</h3>
+<h4>@Model.Description</h4>
+

@@ -1,0 +1,17 @@
+﻿@using PhotosStore.WebUI.HtmlHelpers
+@using PhotosStore.WebUI.Models
+
+@model PhotoTechniqueListViewModel
+
+@{
+    ViewBag.Title = "Товары";
+}
+
+@foreach (var technique in @Model.PhotoTechniques)
+{
+    @Html.Partial("PhotoTechniqueSummary", technique)
+}
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+</div>

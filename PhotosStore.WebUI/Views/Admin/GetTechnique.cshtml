@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PhotosStore.Domain.Entities.PhotoTechnique>
+
+@if (ViewBag.Category != null)
+{
+    foreach (var item in Model.Where(x => x.Category == ViewBag.Category))
+    {
+        <tr>
+            <td class="text-right">@item.PhotoTechniqueId</td>
+            <td>@Html.ActionLink(item.Name, "Edit", new { item.PhotoTechniqueId })</td>
+            <td class="text-right">@item.Price.ToString("# руб")</td>
+            <td class="text-center">
+                @using (Html.BeginForm("Delete", "Admin"))
+                {
+                    @Html.Hidden("PhotoTechniqueId", item.PhotoTechniqueId)
+                    <input type="submit" class="btn btn-default btn-xs" value="Удалить" />
+                }
+            </td>
+        </tr>
+    }
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-right">@item.PhotoTechniqueId</td>
+            <td>@Html.ActionLink(item.Name, "Edit", new { item.PhotoTechniqueId })</td>
+            <td class="text-right">@item.Price.ToString("# руб")</td>
+            <td class="text-center">
+                @using (Html.BeginForm("Delete", "Admin"))
+                {
+                    @Html.Hidden("PhotoTechniqueId", item.PhotoTechniqueId)
+                    <input type="submit" class="btn btn-default btn-xs" value="Удалить" />
+                }
+            </td>
+        </tr>
+    }
+}
