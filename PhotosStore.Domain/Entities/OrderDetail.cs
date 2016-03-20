@@ -13,7 +13,8 @@ namespace PhotosStore.Domain.Entities
         [Key]
 
         public int OrderDetailsID { get; set; }
-        [ForeignKey("Orders")]
+
+       // [ForeignKey("Orders")]
         public int OrderId { get; set; }
         public int PhotoTechniqueID { get; set; }
         public int Quantity { get; set; }

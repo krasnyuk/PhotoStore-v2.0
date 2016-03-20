@@ -40,11 +40,11 @@
         <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIOrdersRepository.PhotosStore#Domain#Abstract#IOrdersRepository#DeleteOrder(System.Int32)">
             <summary>Задает заглушка IOrdersRepository.DeleteOrder(Int32 OrderId)</summary>
         </member>
-        <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIOrdersRepository.PhotosStore#Domain#Abstract#IOrdersRepository#SaveOrder(PhotosStore.Domain.Entities.OrderDetail)">
-            <summary>Задает заглушка IOrdersRepository.SaveOrder(OrderDetail order)</summary>
+        <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIOrdersRepository.PhotosStore#Domain#Abstract#IOrdersRepository#SaveOrder(PhotosStore.Domain.Entities.Order)">
+            <summary>Задает заглушка IOrdersRepository.SaveOrder(Order order)</summary>
         </member>
-        <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIOrdersRepository.SaveOrderOrderDetail">
-            <summary>Задает stub IOrdersRepository.SaveOrder(OrderDetail order)</summary>
+        <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIOrdersRepository.SaveOrderOrder">
+            <summary>Задает stub IOrdersRepository.SaveOrder(Order order)</summary>
         </member>
         <member name="T:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository">
             <summary>Тип заглушки PhotosStore.Domain.Abstract.IPhotoTechniqueRepository</summary>
@@ -157,8 +157,8 @@
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfOrdersRepository.AllInstances.OrdersGet">
             <summary>Задает оболочка совместимости EfOrdersRepository.get_Orders()</summary>
         </member>
-        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfOrdersRepository.AllInstances.SaveOrderOrderDetail">
-            <summary>Задает оболочка совместимости EfOrdersRepository.SaveOrder(OrderDetail order)</summary>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfOrdersRepository.AllInstances.SaveOrderOrder">
+            <summary>Задает оболочка совместимости EfOrdersRepository.SaveOrder(Order order)</summary>
         </member>
         <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEfOrdersRepository.BehaveAsCurrent">
             <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
@@ -184,8 +184,8 @@
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfOrdersRepository.OrdersGet">
             <summary>Задает оболочка совместимости EfOrdersRepository.get_Orders()</summary>
         </member>
-        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfOrdersRepository.SaveOrderOrderDetail">
-            <summary>Задает оболочка совместимости EfOrdersRepository.SaveOrder(OrderDetail order)</summary>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfOrdersRepository.SaveOrderOrder">
+            <summary>Задает оболочка совместимости EfOrdersRepository.SaveOrder(Order order)</summary>
         </member>
         <member name="T:PhotosStore.Domain.Concrete.Fakes.ShimEfPhotoTechniqueRepository">
             <summary>Тип оболочки совместимости для PhotosStore.Domain.Concrete.EfPhotoTechniqueRepository</summary>

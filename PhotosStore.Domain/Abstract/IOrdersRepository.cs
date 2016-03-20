@@ -7,7 +7,7 @@ namespace PhotosStore.Domain.Abstract
     {
         IEnumerable<Order> Orders { get; }
         IEnumerable<OrderDetail> OrderDetails { get; }
-        void SaveOrder(OrderDetail order);
+        void SaveOrder(Order order);
         //реализовать удаление  OrderDetails
         Order DeleteOrder(int OrderId);
 

@@ -19,6 +19,7 @@ namespace PhotosStore.WebUI.Controllers
         }
         public ViewResult Edit(int photoTechniqueId)
         {
+            TempData["IsNew"] = false;
             PhotoTechnique game = _repository.PhotoTechniques
                 .FirstOrDefault(g => g.PhotoTechniqueId == photoTechniqueId);
            
@@ -48,7 +49,7 @@ namespace PhotosStore.WebUI.Controllers
 
         public ViewResult Create()
         {
-            
+            TempData["IsNew"] = true;
             return View("Edit", new PhotoTechnique());
         }
 

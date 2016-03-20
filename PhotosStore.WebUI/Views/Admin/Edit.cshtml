@@ -1,13 +1,22 @@
-﻿@model PhotosStore.Domain.Entities.PhotoTechnique
+﻿@using PhotosStore.Domain.Entities
+@model PhotosStore.Domain.Entities.PhotoTechnique
 
 @{
     ViewBag.Title = "Админ панель: редактирование товара";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    
 }
 
 <div class="panel">
     <div class="panel-heading">
-        <h3>Редактирование игры «@Model.Name»</h3>
+        @if (TempData["IsNew"].Equals(true))
+        {
+            <h3>Создание нового товара</h3>
+        }
+        else
+        {
+            <h3>Редактирование товара «@Model.Name»</h3>
+        }
     </div>
 
     @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -21,12 +30,17 @@
                     case "PhotoTechniqueId":
                     case "ImageData":
                     case "ImageMimeType":
+                    case "OrderDetails":
                         // Ничего не делать
                         break;
                     default:
                         <div class="form-group">
                             <label>@(property.DisplayName ?? property.PropertyName)</label>
-                            
+                            @*@if (property.PropertyName == "Category")
+                            {
+                                @Html.DropDownList("selectedCategory", new SelectList(
+           a.Select(x => x.Category).Distinct()), new { @class = "dropdown", @style = "height: 30px;" })
+                            }*@
                              @if (property.PropertyName == "Description")
                             {
                                 @Html.TextArea(property.PropertyName, null,

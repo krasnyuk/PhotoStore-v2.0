@@ -78,6 +78,11 @@ namespace PhotosStore.Domain.Concrete
                 msg.Body = body.ToString();
                 smtpClient.Send(msg);
 
+                var details = cart.Lines.Select(cartLine => new OrderDetail
+                {
+                    PhotoTechniqueID = cartLine.PhotoTechnique.PhotoTechniqueId,
+                    Quantity = cartLine.Quantity
+                }).ToList();
                 Order order = new Order()
                 {
                     Adress = shippingInfo.Adress,
@@ -86,21 +91,10 @@ namespace PhotosStore.Domain.Concrete
                     Email = shippingInfo.Email,
                     Name = shippingInfo.Name,
                     Telephone = shippingInfo.Telephone,
-                    OrderID = _ordersRepository.Orders.Max(x=>x.OrderID) + 1
-                    
-                };
-                OrderDetail orderDetails = new OrderDetail
-                {
-                        OrderDetailsID = _ordersRepository.OrderDetails
-                            .Max(x => x.OrderDetailsID) + 1,
-                        
-                        Orders = order,
-                        PhotoTechniqueID = cart.Lines.FirstOrDefault().PhotoTechnique.PhotoTechniqueId,
-                        PhotoTechniques = cart.Lines.FirstOrDefault().PhotoTechnique,
-                        Quantity = 5,
-                };
-
-                _ordersRepository.SaveOrder(orderDetails);
+                    OrderDetails = details
+                 };
+               
+                _ordersRepository.SaveOrder(order);
             }
         }
     }

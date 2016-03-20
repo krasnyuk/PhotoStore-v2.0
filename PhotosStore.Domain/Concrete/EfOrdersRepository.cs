@@ -14,27 +14,10 @@ namespace PhotosStore.Domain.Concrete
        public IEnumerable<Order> Orders => _context.Orders;
        public IEnumerable<OrderDetail> OrderDetails => _context.OrderDetails;
 
-       public void SaveOrder(OrderDetail order)
+       public void SaveOrder(Order order)
        {
-           //if (order.OrderID == 0)
-           //{
-              _context.OrderDetails.Add(order);
-           //}
-           //else
-           //{
-           //    Order dbentry = _context.Orders.Find(order.OrderID);
-           //    if (dbentry!=null)
-           //    {
-           //        dbentry.OrderID = order.OrderID;
-           //        dbentry.Adress = order.Adress;
-           //        dbentry.City = order.City;
-           //        dbentry.Date = order.Date;
-           //        dbentry.Email = order.Email;
-           //        dbentry.Telephone = order.Telephone;
-           //        dbentry.Name = order.Name;
-           //    }
-              
-           //}
+           
+            _context.Orders.Add(order);
             _context.SaveChanges();
        }
 
