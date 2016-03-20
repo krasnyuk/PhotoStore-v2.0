@@ -16,7 +16,6 @@ namespace PhotosStore.Domain.Concrete
 
        public void SaveOrder(Order order)
        {
-           
             _context.Orders.Add(order);
             _context.SaveChanges();
        }

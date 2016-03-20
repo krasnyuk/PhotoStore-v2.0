@@ -161,6 +161,7 @@
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\OrderDetailsViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\PhotoTechniqueListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -187,6 +188,9 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Admin\GetTechnique.cshtml" />
+    <Content Include="Views\Admin\Orders.cshtml" />
+    <Content Include="Views\Admin\GetOrders.cshtml" />
+    <Content Include="Views\Admin\OrderDetails.cshtml" />
     <None Include="Views\PhotoTechnique\Technique.cshtml" />
     <Content Include="Views\Shared\_TechniqueDetailsLayout.cshtml" />
     <Content Include="Views\PhotoTechnique\Test.cshtml" />

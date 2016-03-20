@@ -1,0 +1,28 @@
+﻿@model PhotosStore.WebUI.Models.OrderDetailsViewModel
+
+@{
+    ViewBag.Title = "Order details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Список заказа № @Model.orderDetails.FirstOrDefault().OrderId</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th>Товар</th>
+                <th class="text-center">Кол-во</th>
+            </tr>
+            @foreach (var item in Model.orderDetails)
+            {
+                <tr>
+                    <td class="text-center">@Model.PhotoTechniques.FirstOrDefault(x=>x.PhotoTechniqueId==@item.PhotoTechniqueID).Name</td>
+                    <td class="text-center">@item.Quantity</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

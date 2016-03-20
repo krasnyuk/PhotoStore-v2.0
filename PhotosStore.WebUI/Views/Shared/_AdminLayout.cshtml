@@ -15,6 +15,36 @@
     <title></title>
 </head>
 <body>
+@if (ViewBag.Title != "Login") // убрать навбар для страницы логина
+{
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Admin/Index">Админ панель</a>
+            </div>
+            <ul class="nav navbar-nav">
+                @if (ViewBag.Title == "Index") //выбор выделения для нав-бара вверху страницы
+                {
+                    <li class="active">@Html.ActionLink("Список товаров", "Index", "Admin")</li>
+                    <li>@Html.ActionLink("История заказов", "Orders", "Admin")</li>
+                }
+                else
+                {
+
+                    <li >@Html.ActionLink("Список товаров", "Index", "Admin")</li>
+                    <li class="active">@Html.ActionLink("История заказов", "Orders", "Admin")</li>
+                }
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/PhotoTechnique/List">
+                        <span class="glyphicon glyphicon-camera"></span> В магазин
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+}
 <div>
     @if (TempData["message"] != null)
     {

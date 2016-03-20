@@ -5,18 +5,24 @@ using System.Web;
 using System.Web.Mvc;
 using PhotosStore.Domain.Abstract;
 using PhotosStore.Domain.Entities;
+using PhotosStore.WebUI.Models;
 
 namespace PhotosStore.WebUI.Controllers
 {
     [Authorize]
     public class AdminController : Controller
     {
-        readonly IPhotoTechniqueRepository _repository;
 
-        public AdminController(IPhotoTechniqueRepository repo)
+        readonly IPhotoTechniqueRepository _repository;
+        private readonly IOrdersRepository _ordersRepository;
+        public AdminController(IPhotoTechniqueRepository repo, IOrdersRepository _ordersRepository)
         {
+            this._ordersRepository = _ordersRepository;
             _repository = repo;
         }
+
+        #region PhotoTechnique List Region
+        
         public ViewResult Edit(int photoTechniqueId)
         {
             TempData["IsNew"] = false;
@@ -70,8 +76,34 @@ namespace PhotosStore.WebUI.Controllers
         }
         public ViewResult Index()
         {
-            
             return View(_repository.PhotoTechniques);
+        }
+
+        #endregion
+
+        public ViewResult Orders()
+        {
+            return View(_ordersRepository.Orders);
+        }
+
+        public PartialViewResult GetOrders()
+        {
+            return PartialView(_ordersRepository.Orders);
+        }
+        
+        public ActionResult OrderDetails(int orderId)
+        {
+            OrderDetailsViewModel orderDetails = new OrderDetailsViewModel
+            {
+                orderDetails = _ordersRepository.OrderDetails.Where(x=>x.OrderId == orderId),
+                PhotoTechniques = _repository.PhotoTechniques
+            };
+            return View(orderDetails);
+        }
+
+        public ActionResult DeleteOrder()
+        {
+            throw new NotImplementedException();
         }
     }
 }
