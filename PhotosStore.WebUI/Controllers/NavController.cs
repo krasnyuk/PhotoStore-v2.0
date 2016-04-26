@@ -9,17 +9,17 @@ namespace PhotosStore.WebUI.Controllers
 {
     public class NavController : Controller
     {
-        private IPhotoTechniqueRepository repository;
+        private readonly IPhotoTechniqueRepository _repository;
 
         public NavController(IPhotoTechniqueRepository repo)
         {
-            repository = repo;
+            _repository = repo;
         }
 
         public PartialViewResult Menu(string category = null)
         {
             ViewBag.SelectedCategory = category;
-            IEnumerable<string> categories = repository.PhotoTechniques
+            IEnumerable<string> categories = _repository.PhotoTechniques
                 .Select(technique => technique.Category)
                 .Distinct()
                 .OrderBy(x => x);

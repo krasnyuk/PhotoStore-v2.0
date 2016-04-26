@@ -12,12 +12,12 @@ namespace PhotosStore.WebUI.Controllers
 {
     public class CartController : Controller
     {
-        private IPhotoTechniqueRepository repository;
-        private IOrderProcessor orderProcessor;
+        private readonly IPhotoTechniqueRepository _repository;
+        private readonly IOrderProcessor _orderProcessor;
         public CartController(IPhotoTechniqueRepository repo, IOrderProcessor orderProcessor)
         {
-            repository = repo;
-            this.orderProcessor = orderProcessor;
+            _repository = repo;
+            _orderProcessor = orderProcessor;
         }
 
         public ViewResult Checkout()
@@ -34,7 +34,7 @@ namespace PhotosStore.WebUI.Controllers
 
             if (ModelState.IsValid)
             {
-                orderProcessor.ProcessOrder(cart, shippingDetails);
+                _orderProcessor.ProcessOrder(cart, shippingDetails);
                 //orderProcessor.SendEmail("krasnyuk.photo@gmail.com","Заказ","Some text");
                 cart.Clear();
                 return View("Completed");
@@ -46,6 +46,7 @@ namespace PhotosStore.WebUI.Controllers
         }
         public ViewResult Index(Cart cart, string returnUrl)
         {
+            
             return View(new CartIndexViewModel
             {
                 Cart = cart,
@@ -55,7 +56,7 @@ namespace PhotosStore.WebUI.Controllers
         public RedirectToRouteResult AddToCart(Cart cart, int photoTechniqueId, string returnUrl)
         {
 
-            PhotoTechnique photoTechnique = repository.PhotoTechniques.FirstOrDefault(g => g.PhotoTechniqueId == photoTechniqueId);
+            PhotoTechnique photoTechnique = _repository.PhotoTechniques.FirstOrDefault(g => g.PhotoTechniqueId == photoTechniqueId);
 
             if (photoTechnique != null)
             {
@@ -66,7 +67,7 @@ namespace PhotosStore.WebUI.Controllers
 
         public RedirectToRouteResult RemoveFromCart(Cart cart, int photoTechniqueId, string returnUrl)
         {
-            PhotoTechnique photoTechnique = repository.PhotoTechniques.FirstOrDefault(g => g.PhotoTechniqueId == photoTechniqueId);
+            PhotoTechnique photoTechnique = _repository.PhotoTechniques.FirstOrDefault(g => g.PhotoTechniqueId == photoTechniqueId);
 
             if (photoTechnique != null)
             {
