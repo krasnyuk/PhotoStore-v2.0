@@ -15,5 +15,6 @@ namespace PhotosStore.Domain.Abstract
 
         PhotoTechnique DeletePhotoTechnique(int photoTechniqueId);
 
+        PhotoTechnique[] FindCities(string term);
     }
 }

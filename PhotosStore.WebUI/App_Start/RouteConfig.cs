@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.UI.WebControls;
 
 namespace PhotosStore.WebUI
 {
@@ -31,16 +32,25 @@ namespace PhotosStore.WebUI
             );
 
             routes.MapRoute(null, "{category}", new { controller = "PhotoTechnique", action = "List", page = 1 });
+           
             routes.MapRoute(null, "{category}/Id{photoTechniqueId}", 
                 new
                 {
                     controller = "PhotoTechnique",
                     action = "Technique",
-                    category ="",
+                    category = "",
                     photoTechniqueId = 1
                 }, 
                 new { photoTechniqueId = @"\d+" });
+            routes.MapRoute(null, "Id{photoTechniqueId}",
+               new
+               {
+                   controller = "PhotoTechnique",
+                   action = "Technique",
 
+                   photoTechniqueId = 1
+               },
+               new { photoTechniqueId = @"\d+" });
             routes.MapRoute(null,"{category}/Page{page}", new { controller = "PhotoTechnique", action = "List" }, new { page = @"\d+" });
 
             routes.MapRoute(null, "{controller}/{action}");

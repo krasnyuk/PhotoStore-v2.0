@@ -55,6 +55,9 @@
         <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.DeletePhotoTechniqueInt32">
             <summary>Задает stub IPhotoTechniqueRepository.DeletePhotoTechnique(Int32 photoTechniqueId)</summary>
         </member>
+        <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.FindCitiesString">
+            <summary>Задает stub IPhotoTechniqueRepository.FindCities(String term)</summary>
+        </member>
         <member name="P:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotosStore#Domain#Abstract#IPhotoTechniqueRepository#PhotoTechniques">
             <summary>Задает stub IPhotoTechniqueRepository.get_PhotoTechniques()</summary>
         </member>
@@ -63,6 +66,9 @@
         </member>
         <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotosStore#Domain#Abstract#IPhotoTechniqueRepository#DeletePhotoTechnique(System.Int32)">
             <summary>Задает заглушка IPhotoTechniqueRepository.DeletePhotoTechnique(Int32 photoTechniqueId)</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotosStore#Domain#Abstract#IPhotoTechniqueRepository#FindCities(System.String)">
+            <summary>Задает заглушка IPhotoTechniqueRepository.FindCities(String term)</summary>
         </member>
         <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotosStore#Domain#Abstract#IPhotoTechniqueRepository#SavePhotoTechnique(PhotosStore.Domain.Entities.PhotoTechnique)">
             <summary>Задает заглушка IPhotoTechniqueRepository.SavePhotoTechnique(PhotoTechnique photoTechnique)</summary>
@@ -202,6 +208,9 @@
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfPhotoTechniqueRepository.AllInstances.DeletePhotoTechniqueInt32">
             <summary>Задает оболочка совместимости EfPhotoTechniqueRepository.DeletePhotoTechnique(Int32 photoTechniqueId)</summary>
         </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfPhotoTechniqueRepository.AllInstances.FindCitiesString">
+            <summary>Задает оболочка совместимости EfPhotoTechniqueRepository.FindCities(String term)</summary>
+        </member>
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfPhotoTechniqueRepository.AllInstances.PhotoTechniquesGet">
             <summary>Задает оболочка совместимости EfPhotoTechniqueRepository.get_PhotoTechniques()</summary>
         </member>
@@ -225,6 +234,9 @@
         </member>
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfPhotoTechniqueRepository.DeletePhotoTechniqueInt32">
             <summary>Задает оболочка совместимости EfPhotoTechniqueRepository.DeletePhotoTechnique(Int32 photoTechniqueId)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfPhotoTechniqueRepository.FindCitiesString">
+            <summary>Задает оболочка совместимости EfPhotoTechniqueRepository.FindCities(String term)</summary>
         </member>
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEfPhotoTechniqueRepository.PhotoTechniquesGet">
             <summary>Задает оболочка совместимости EfPhotoTechniqueRepository.get_PhotoTechniques()</summary>

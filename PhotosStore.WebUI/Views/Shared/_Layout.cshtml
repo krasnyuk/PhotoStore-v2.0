@@ -5,21 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
-    
     <title>@ViewBag.Title</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/content/themes/base/jquery-ui.css")" rel="Stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(function () { //Обработчик готового дерева DOM
+            var autocompleteUrl = '@Url.Action("Find","Nav")'; //URL поиска
+            $("input#good").autocomplete({ //Добавляем сценарий автозаполения
+            source: autocompleteUrl,
+            minLength: 2,
+            select: function (event, ui) {
+                window.location = "Товар/Id" + ui.item.id;
+            }
+  });
+});
+    </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse" role="navigation">
-        <a class="navbar-brand" href="#">Photo Technique Store - магазин фототехники</a>
-        @Html.Action("Summary", "Cart")
+<style>
+    .ui-autocomplete {
+        z-index: 1000;
+    }
+</style>
+<div class="navbar navbar-inverse" role="navigation">
+    <a class="navbar-brand" href="#">Магазин фототехники</a>
+    @Html.Action("Summary", "Cart")
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <div>
+                @* Контейнер для результатов Autocomplet'a *@
+                <input class="form-control navbar-text" type="text"
+                       placeholder="Введите название товара" id="good"/>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="row panel">
+    <div id="categories" class="col-xs-3">
+        @Html.Action("Menu", "Nav")
     </div>
-    <div class="row panel">
-        <div id="categories" class="col-xs-3">
-            @Html.Action("Menu", "Nav")
-        </div>
-        <div class="col-xs-8">
-            @RenderBody()
-        </div>
+    <div class="col-xs-8">
+        @RenderBody()
     </div>
+</div>
 </body>
 </html>

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using PhotosStore.Domain.Abstract;
 using PhotosStore.Domain.Entities;
 
@@ -40,5 +42,10 @@ namespace PhotosStore.Domain.Concrete
             }
             return dbEntry;
         }
+
+       public PhotoTechnique[] FindCities(string term)
+       {
+           return _context.PhotoTechniques.Where(x => x.Name.Contains(term)).ToArray();
+       }
     }
 }
