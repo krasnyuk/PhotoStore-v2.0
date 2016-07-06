@@ -1,19 +1,32 @@
 ﻿@model IEnumerable<string>
+<div class="panel panel-info">
+    <div  class="panel-heading">
+        <h4><b style="text-align:center; display:block;">
+                Категории товаров
+            </b>
+        </h4>
+    </div>
+    <div class="panel-body">
 
-@Html.ActionLink("Домой", "List", "PhotoTechnique", null,
+
+        @Html.ActionLink("Домой", "List", "PhotoTechnique", null,
     new { @class = "btn btn-block btn-default btn-lg" })
 
-@foreach (var link in Model)
-{
-    @Html.RouteLink(link, new
-{
-    controller = "PhotoTechnique",
-    action = "List",
-    category = link,
-    page = 1
-},
+
+
+        @foreach (var link in Model)
+        {
+            @Html.RouteLink(link, new
+   {
+       controller = "PhotoTechnique",
+       action = "List",
+       category = link,
+       page = 1
+   },
 new
 {
-    @class = "btn btn-block btn-default btn-lg"+ (link == ViewBag.SelectedCategory ? " btn-primary" : "")
+    @class = "btn btn-block btn-default btn-lg" + (link == ViewBag.SelectedCategory ? " btn-primary" : "")
 })
-}
+        }
+    </div>
+</div>

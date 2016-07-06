@@ -75,6 +75,8 @@
       <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,6 +131,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ErrorStyles.css" />
     <Content Include="Content\HrefStyles.css" />
+    <Content Include="Content\jquery.formstyler.css" />
+    <Content Include="Content\not_photo2.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Themes\Base\jquery-ui.css" />
     <Content Include="Content\Themes\Base\jquery-ui.theme.css" />
@@ -136,11 +140,14 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.formstyler.js" />
+    <Content Include="Scripts\jquery.formstyler.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -148,6 +155,75 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="Service References\BrandsReference\configuration91.svcinfo" />
+    <None Include="Service References\BrandsReference\configuration.svcinfo" />
+    <Content Include="Service References\BrandsReference\PhotosStore.WebUI.BrandsReference.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\BrandsReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ManufacturersService\Manufacturers.wsdl" />
+    <None Include="Service References\ManufacturersService\Manufacturers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManufacturersService\Manufacturers1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManufacturersService\Manufacturers2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\my1\BrandsService.wsdl" />
+    <None Include="Service References\my1\BrandsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\my1\BrandsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\my1\BrandsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\mybrands\BrandsService.wsdl" />
+    <None Include="Service References\mybrands\BrandsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\mybrands\BrandsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\mybrands\BrandsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\my1\configuration91.svcinfo" />
+    <None Include="Service References\my1\configuration.svcinfo" />
+    <None Include="Service References\my1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ManufacturersService\configuration91.svcinfo" />
+    <None Include="Service References\ManufacturersService\configuration.svcinfo" />
+    <None Include="Service References\ManufacturersService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\mybrands\PhotosStore.WebUI.mybrands.Brand.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\MyService\configuration91.svcinfo" />
+    <None Include="Service References\MyService\configuration.svcinfo" />
+    <None Include="Service References\mybrands\configuration91.svcinfo" />
+    <None Include="Service References\mybrands\configuration.svcinfo" />
+    <None Include="Service References\mybrands\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\MyService\PhotosStore.WebUI.MyService.Brand.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\MyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -174,6 +250,31 @@
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\PhotoTechniqueListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\BrandsReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ManufacturersService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\my1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\mybrands\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -200,9 +301,32 @@
     <Content Include="Views\Admin\Orders.cshtml" />
     <Content Include="Views\Admin\GetOrders.cshtml" />
     <Content Include="Views\Admin\OrderDetails.cshtml" />
+    <Content Include="Views\Nav\SortPanel.cshtml" />
+    <Content Include="Views\Nav\Valute.cshtml" />
+    <None Include="Service References\BrandsReference\Service1.wsdl" />
+    <None Include="Service References\BrandsReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BrandsReference\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BrandsReference\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MyService\Service1.wsdl" />
+    <None Include="Service References\MyService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MyService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MyService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\PhotoTechnique\Mesh.cshtml" />
     <None Include="Views\PhotoTechnique\Technique.cshtml" />
     <Content Include="Views\Shared\_TechniqueDetailsLayout.cshtml" />
-    <Content Include="Views\PhotoTechnique\Test.cshtml" />
+    <Content Include="Views\Shared\PhotoTechniqueSummaryMesh.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -210,12 +334,21 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PhotosStore.Domain\PhotosStore.Domain.csproj">
       <Project>{0f490277-d055-4137-99cc-22c069515fa6}</Project>
       <Name>PhotosStore.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BrandsReference\" />
+    <WCFMetadataStorage Include="Service References\ManufacturersService\" />
+    <WCFMetadataStorage Include="Service References\my1\" />
+    <WCFMetadataStorage Include="Service References\mybrands\" />
+    <WCFMetadataStorage Include="Service References\MyService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

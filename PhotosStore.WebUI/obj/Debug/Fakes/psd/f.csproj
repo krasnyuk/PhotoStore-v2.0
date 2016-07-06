@@ -8,7 +8,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
-    <ProjectGuid>ea4b1431-6646-47fc-b239-59b6c35c81f0</ProjectGuid>
+    <ProjectGuid>f55320bd-1097-44f6-be67-2ef69856c507</ProjectGuid>
     <!-- update GUID here -->
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,18 +45,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes">
-      <HintPath>D:\SOFT\Программы\Common7\IDE\PublicAssemblies\Microsoft.QualityTools.Testing.Fakes.dll</HintPath>
+      <HintPath>D:\Софт\VS2015 Enterprise\Common7\IDE\PublicAssemblies\Microsoft.QualityTools.Testing.Fakes.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <Aliases>mqttf</Aliases>
     </Reference>
     <Reference Include="PhotosStore.Domain">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\PhotosStore.Domain\bin\Debug\PhotosStore.Domain.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\PhotosStore.Domain\bin\Debug\PhotosStore.Domain.dll</HintPath>
       <Aliases>psd</Aliases>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\PhotosStore.Domain\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\PhotosStore.Domain\bin\Debug\EntityFramework.dll</HintPath>
       <Aliases>ef</Aliases>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -71,11 +71,11 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.CSharp">
@@ -83,23 +83,23 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Moq">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Moq.4.1.1309.1617\lib\net40\Moq.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Moq.4.1.1309.1617\lib\net40\Moq.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Ninject">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Ninject.Web.Common">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Ninject.Web.Mvc">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations">
@@ -126,6 +126,14 @@
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.EnterpriseServices.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Runtime.Serialization.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.ServiceModel.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System.Web.ApplicationServices">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Web.ApplicationServices.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -147,15 +155,15 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Web.Helpers">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Web.Mvc">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Web.Razor">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Web.Services">
@@ -163,15 +171,15 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Web.WebPages">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Xml">
@@ -183,11 +191,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="WebActivator">
-      <HintPath>D:\Programming\ASP NET\PhotoStore-0d93b04c96dc8b48161553e5f14311a69b129dc6\packages\WebActivator.1.5\lib\net40\WebActivator.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>D:\ASP NEt\Проект\PhotoStore-v2.0\packages\WebActivator.1.5\lib\net40\WebActivator.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Transactions">

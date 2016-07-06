@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using PhotosStore.Domain.Abstract;
 using PhotosStore.Domain.Entities;
+using System.Xml.Linq;
 
 namespace PhotosStore.WebUI.Controllers
 {
@@ -17,6 +18,18 @@ namespace PhotosStore.WebUI.Controllers
             _repository = repo;
         }
 
+        public PartialViewResult Valute()
+        {
+            XDocument doc = XDocument.Load("http://bank-ua.com/export/currrate.xml");
+            var usd = doc.Element("chapter")
+                .Elements("item")
+                .Select(x => new { Name = x.Element("char3").Value, Value = x.Element("rate").Value })
+                .Where(x => x.Name == "USD")
+                .FirstOrDefault();
+            ViewBag.Name = usd.Name;
+            ViewBag.Value = usd.Value;
+            return PartialView();
+        }
         public PartialViewResult Menu(string category = null)
         {
             ViewBag.SelectedCategory = category;
@@ -25,6 +38,10 @@ namespace PhotosStore.WebUI.Controllers
                 .Distinct()
                 .OrderBy(x => x);
             return PartialView(categories);
+        }
+        public PartialViewResult SortPanel()
+        {
+            return PartialView();
         }
         //Autocomplete
         public ActionResult Find(string term)

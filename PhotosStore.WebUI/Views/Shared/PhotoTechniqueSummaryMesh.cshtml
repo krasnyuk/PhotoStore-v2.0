@@ -1,0 +1,55 @@
+﻿@model PhotosStore.Domain.Entities.PhotoTechnique
+
+<div class="col-md-4">
+    <div class="panel panel-default" >
+        <div class="panel-heading heading-mesh" >
+            <strong>
+                <a href="@Url.Action("Technique", "PhotoTechnique",
+                         new
+                         {
+                             category = Model.Category,
+                             photoTechniqueId = Model.PhotoTechniqueId
+                         })">
+                    @Model.Name
+                </a>
+            </strong>
+        </div>
+        <div class="panel-body body-mesh" >
+            @if (Model.ImageData != null)
+            {
+                <div>
+                    <img class="img-thumbnail img-grid"
+                         src="@Url.Action("GetImage", "PhotoTechnique", new { Model.PhotoTechniqueId })" />
+                </div>
+            }
+            else
+            {
+                <div>
+                    <img class="img-thumbnail img-grid" src="~/Content/not_photo2.jpg" />
+                </div>
+            }
+        
+            @if (Model.Description.Length >= 100)
+            {
+                string shortDescription = Model.Description;
+                @shortDescription
+            }
+            else
+            {
+                <div>
+                    Описание товара
+                </div>
+            }
+        </div>
+        <div class="panel-footer">
+            @using (Html.BeginForm("AddToCart", "Cart"))
+            {
+
+                @Html.Hidden("PhotoTechniqueId", Model.PhotoTechniqueId)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                <input type="submit" class="btn btn-info" value="Добавить в корзину" />
+            }
+
+        </div>
+    </div>
+</div>

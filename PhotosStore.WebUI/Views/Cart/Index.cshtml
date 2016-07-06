@@ -32,7 +32,7 @@
                 <td>
                     @using (Html.BeginForm("RemoveFromCart", "Cart"))
                     {
-                        @Html.Hidden("orderId", line.PhotoTechnique.PhotoTechniqueId)
+                        @Html.Hidden("PhotoTechniqueId", line.PhotoTechnique.PhotoTechniqueId)
                         @Html.HiddenFor(x => x.ReturnUrl)
                         <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
                     }

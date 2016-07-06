@@ -1,18 +1,23 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+.dropDown {
+    height:25px;
+    border-radius:5px;
 }
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.main-grid-rows {
+    margin-top:50px;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.img-grid {
+    margin-left:40px;
+    margin-bottom: 20px;
+} 
+.heading-mesh { 
+    min-height: 60px; 
+    max-height: 50px;
+    color:aliceblue;
+    text-align:center;
 }
-
+.body-mesh {
+   max-height: 350px; 
+   min-height:350px; 
+   overflow-y: scroll;
+}

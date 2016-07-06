@@ -20,14 +20,30 @@ namespace PhotosStore.WebUI.Controllers
             _repository = repo;
             this._ordersRepository = _ordersRepository;
         }
-        //ТЕСТИРУЮ НОВЫЕ ТАБЛИЦЫ
-        
-        public ViewResult Test()
-        {
-            Order order = _ordersRepository.Orders.FirstOrDefault();
-            return View(order);
-        }
 
+
+        public ViewResult Mesh(string category, int page = 1)
+        {
+            PhotoTechniqueListViewModel model = new PhotoTechniqueListViewModel
+            {
+                PhotoTechniques = _repository.PhotoTechniques
+                    .Where(p => category == null || p.Category == category)
+                    .OrderBy(game => game.PhotoTechniqueId)
+
+        //            .Skip((page - 1) * pageSize)
+        //            .Take(pageSize),
+        //        PagingInfo = new PagingInfo
+        //        {
+        //            CurrentPage = page,
+        //            ItemsPerPage = pageSize,
+        //            TotalItems = category == null ?
+        //_repository.PhotoTechniques.Count() :
+        //_repository.PhotoTechniques.Count(game => game.Category == category)
+        //        },
+        //        CurrentCategory = category
+            };
+            return View(model);
+        }
         public ViewResult List(string category, int page = 1)
         {
 
@@ -50,7 +66,53 @@ namespace PhotosStore.WebUI.Controllers
             };
             return View(model);
         }
+        [HttpPost]
+        public ViewResult ListSorted(string price, string category, int page = 1 )
+        {
+            PhotoTechniqueListViewModel model;
+            if (price=="Up")
+            {
+            model = new PhotoTechniqueListViewModel
+            {
+                PhotoTechniques = _repository.PhotoTechniques
+                    .Where(p => category == null || p.Category == category)
+                    .OrderByDescending(t => t.Price)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize,
+                    TotalItems = category == null ?
+            _repository.PhotoTechniques.Count() :
+            _repository.PhotoTechniques.Count(game => game.Category == category)
+                },
+                CurrentCategory = category
+            };
+            }
+            else
+            {
+                 model = new PhotoTechniqueListViewModel
+                {
 
+                    PhotoTechniques = _repository.PhotoTechniques
+                   .Where(p => category == null || p.Category == category)
+                   .OrderBy(t => t.Price)
+                   .Skip((page - 1) * pageSize)
+                   .Take(pageSize),
+                    PagingInfo = new PagingInfo
+                    {
+                        CurrentPage = page,
+                        ItemsPerPage = pageSize,
+                        TotalItems = category == null ?
+       _repository.PhotoTechniques.Count() :
+       _repository.PhotoTechniques.Count(game => game.Category == category)
+                    },
+                    CurrentCategory = category
+                };
+            }
+            return View("List",model);
+        }
         public ViewResult Technique(string category = "", int photoTechniqueId = 1)
         {
             PhotoTechnique technique = _repository.PhotoTechniques
@@ -60,12 +122,12 @@ namespace PhotosStore.WebUI.Controllers
 
         public FileContentResult GetImage(int photoTechniqueId)
         {
-            PhotoTechnique game = _repository.PhotoTechniques
+            PhotoTechnique technique = _repository.PhotoTechniques
                 .FirstOrDefault(g => g.PhotoTechniqueId == photoTechniqueId);
 
-            if (game != null)
+            if (technique != null)
             {
-                return File(game.ImageData, game.ImageMimeType);
+                return File(technique.ImageData, technique.ImageMimeType);
             }
             else
             {

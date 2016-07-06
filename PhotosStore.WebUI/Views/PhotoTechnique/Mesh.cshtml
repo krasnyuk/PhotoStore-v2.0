@@ -1,0 +1,41 @@
+﻿@using PhotosStore.WebUI.HtmlHelpers
+@using PhotosStore.WebUI.Models
+
+@model PhotoTechniqueListViewModel
+
+@{
+    ViewBag.Title = "Товары";
+    List<PhotosStore.Domain.Entities.PhotoTechnique> list = new List<PhotosStore.Domain.Entities.PhotoTechnique>();
+    list = Model.PhotoTechniques.ToList();
+
+    int k = 0;
+}
+<div class="container">
+    @for (int i = 0; i <= list.Count-3; i += 3)
+    {
+        <div class="row">
+            @for (int j = i; j < i + 3; j++)
+            {
+                @Html.Partial("PhotoTechniqueSummaryMesh", list[j])
+            }
+         </div>
+     }
+            @*@for (int i = 0; i <= list.Count - 3;)
+                {
+                    <div class="row">
+                        @Html.Partial("PhotoTechniqueSummaryMesh", list[i])
+                        @Html.Partial("PhotoTechniqueSummaryMesh", list[i+1])
+                        @Html.Partial("PhotoTechniqueSummaryMesh", list[i+2])
+                    </div>
+                    i += 3;
+                }*@
+
+            @*<div class="btn-group pull-right">
+                    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+                </div>*@
+</div>
+
+<script>
+    $('#Mesh').addClass('active');
+    $('#List').removeClass('active');
+</script>

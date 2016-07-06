@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using PhotosStore.Domain.Abstract;
 using PhotosStore.Domain.Entities;
 using PhotosStore.WebUI.Models;
+using System.Data;
 
 namespace PhotosStore.WebUI.Controllers
 {
@@ -13,13 +14,16 @@ namespace PhotosStore.WebUI.Controllers
     public class AdminController : Controller
     {
 
-        readonly IPhotoTechniqueRepository _repository;
+        private readonly IPhotoTechniqueRepository _repository;
         private readonly IOrdersRepository _ordersRepository;
+        
+
         public AdminController(IPhotoTechniqueRepository repo, IOrdersRepository _ordersRepository)
         {
             this._ordersRepository = _ordersRepository;
             _repository = repo;
         }
+
 
         #region PhotoTechnique List Region
         
