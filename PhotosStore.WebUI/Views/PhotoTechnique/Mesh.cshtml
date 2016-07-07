@@ -17,19 +17,19 @@
             @for (int j = i; j < i + 3; j++)
             {
                 @Html.Partial("PhotoTechniqueSummaryMesh", list[j])
+                k = j;
             }
          </div>
      }
-            @*@for (int i = 0; i <= list.Count - 3;)
-                {
-                    <div class="row">
-                        @Html.Partial("PhotoTechniqueSummaryMesh", list[i])
-                        @Html.Partial("PhotoTechniqueSummaryMesh", list[i+1])
-                        @Html.Partial("PhotoTechniqueSummaryMesh", list[i+2])
-                    </div>
-                    i += 3;
-                }*@
-
+     @if (list.Count % 3 != 0)
+     {
+        <div class="row">
+            @for (int i = k+1; i < list.Count; i++)
+            {
+            @Html.Partial("PhotoTechniqueSummaryMesh", list[i])
+            }
+        </div>
+     }
             @*<div class="btn-group pull-right">
                     @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
                 </div>*@
