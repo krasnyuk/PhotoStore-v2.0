@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+   
     <title>@ViewBag.Title</title>
     <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
     <link href="@Url.Content("~/content/themes/base/jquery-ui.css")" rel="Stylesheet" type="text/css" />
     <link href="@Url.Content("~/content/Site.css")" rel="Stylesheet" type="text/css" />
     <script type="text/javascript">
@@ -47,8 +47,15 @@
 </div>
 <div class="row panel">
     <div id="categories" class="col-xs-3">
-        @Html.Action("Menu", "Nav")
-      
+        @if(ViewBag.Title == "Товары - список")
+        {
+            @Html.Action("Menu", "Nav", new { grid = "list" })
+        }
+        else 
+        if (ViewBag.Title == "Товары - сетка")
+        {
+            @Html.Action("Menu", "Nav", new { grid = "mesh" })
+        }
     </div>
     <div class="col-xs-8">
         @Html.Action("SortPanel", "Nav")

@@ -13,14 +13,13 @@ namespace PhotosStore.WebUI.Controllers
     {
         private readonly IPhotoTechniqueRepository _repository;
         private readonly IOrdersRepository _ordersRepository;
-        public int pageSize = 4;
+        public int pageSize = 6;
 
         public PhotoTechniqueController(IPhotoTechniqueRepository repo, IOrdersRepository _ordersRepository)
         {
             _repository = repo;
             this._ordersRepository = _ordersRepository;
         }
-
 
         public ViewResult Mesh(string category, int page = 1)
         {
@@ -29,18 +28,17 @@ namespace PhotosStore.WebUI.Controllers
                 PhotoTechniques = _repository.PhotoTechniques
                     .Where(p => category == null || p.Category == category)
                     .OrderBy(game => game.PhotoTechniqueId)
-
-        //            .Skip((page - 1) * pageSize)
-        //            .Take(pageSize),
-        //        PagingInfo = new PagingInfo
-        //        {
-        //            CurrentPage = page,
-        //            ItemsPerPage = pageSize,
-        //            TotalItems = category == null ?
-        //_repository.PhotoTechniques.Count() :
-        //_repository.PhotoTechniques.Count(game => game.Category == category)
-        //        },
-        //        CurrentCategory = category
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize,
+                    TotalItems = category == null ?
+        _repository.PhotoTechniques.Count() :
+        _repository.PhotoTechniques.Count(game => game.Category == category)
+                },
+                CurrentCategory = category
             };
             return View(model);
         }

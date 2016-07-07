@@ -30,8 +30,9 @@ namespace PhotosStore.WebUI.Controllers
             ViewBag.Value = usd.Value;
             return PartialView();
         }
-        public PartialViewResult Menu(string category = null)
+        public PartialViewResult Menu(string category = null, string grid = "list")
         {
+            ViewBag.Grid = grid;
             ViewBag.SelectedCategory = category;
             IEnumerable<string> categories = _repository.PhotoTechniques
                 .Select(technique => technique.Category)

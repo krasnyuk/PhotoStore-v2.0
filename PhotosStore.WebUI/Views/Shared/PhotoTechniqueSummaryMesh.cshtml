@@ -31,13 +31,16 @@
         
             @if (Model.Description.Length >= 100)
             {
-                string shortDescription = Model.Description;
+                string shortDescription = Model.Description.Substring(0,100) + "...";
                 @shortDescription
             }
             else
             {
                 <div>
                     Описание товара
+                    <br />
+                    <br />
+                    <br />
                 </div>
             }
         </div>

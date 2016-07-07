@@ -14,21 +14,10 @@
 }
 <div class="panel panel-info">
     <div class="panel-body">
-        <div class="">
-
-
-            <a class="btn btn-info" id="List"  href="/PhotoTechnique/List"><span class="glyphicon glyphicon-list"></span> Список</a>
-            <a class="btn btn-info" id="Mesh"  href="/PhotoTechnique/Mesh"><span class="glyphicon glyphicon glyphicon-th"></span> Сетка</a>
+        <div class="pull-right">
+            <a class="btn-sm btn-info" id="List"  href="/PhotoTechnique/List"><span class="glyphicon glyphicon-list"></span> Список</a>
+            <a class="btn-sm btn-info" id="Mesh"  href="/PhotoTechnique/Mesh"><span class="glyphicon glyphicon glyphicon-th"></span> Сетка</a>
         </div>
-
-        @*@using (Html.BeginForm("ListSorted","PhotoTechnique"))
-        {
-            <b>Цена:</b>
-            @Html.DropDownList("price", list, new { @class = "dropDown" })
-            <b>Сортировка:</b>
-            @Html.DropDownList("sort", sortList, new { @class = "dropDown" })
-            <input type="submit" name="Отобразить" id="show" class="btn btn-primary" />
-        }*@
     </div>
 </div>
 

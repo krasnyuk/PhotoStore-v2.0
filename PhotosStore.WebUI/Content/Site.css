@@ -19,5 +19,8 @@
 .body-mesh {
    max-height: 350px; 
    min-height:350px; 
-   overflow-y: scroll;
+
+}
+hr {
+    margin:2px;
 }
